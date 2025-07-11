@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Pows</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 10px 0px;
+  text-align: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 35px;
+  background: #002080;
+  color: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: blue;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+
+
+/* Footer */
+.mainp::after {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.dropbtn {
+  background-color: #f1f1f1;
+  color: blue;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn a:link {color:blue; text-decoration: none;}
+.dropbtn a:hover {color:white; text-decoration: none;}
+.dropbtn a:visited {color:mediummagenta; text-decoration: none;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: blue;
+  color: white;
+}
+
+
+form{
+width: 600px;
+margin: 10px auto;
+}
+
+input[type=search]{
+width: 400px;
+height: 40px;
+font-size: 16px;
+padding: 0px 40px 0px 40px;
+border-radius: 40px;
+outline: none;
+border: solid gray 2px;
+background: url('images/search.gif') 7px center no-repeat;
+}
+
+img.paco {    
+  content: url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAATaSURBVHhe7ZKBjuMwCAX3/396T7ZEj7wbME4T13ubkaZS4eHQ1F/fD1vy9fU19AqeC7AZ9EdnvstzATaB/twZz/KapEPJu1j1nN3Q3/2OZ5i+AM07WPGM3dDffIWzhBfAoz3tP8xB7zPTQ33vLKUL0Ij6Wvc9D+WaRlQ3tO/1UF/9JLTPyBFnZoxXcnQA9bXm9VDfNKJ6Q3ukQT3yE9AeI6ucnX2lRsPaVyljRHVPlNG69ajW0Lr1qLYa3YF8BzqvmfHqjoa0r1LGk/UaUf/u+ir0+eqVzJz/6mQD2quqZJlP1Vegz1bvoPqMVycboB7VKkRzM3WtWb0xW1+BPtu8k+rzXlUaID3UNw3qeY1qPdKYra9An23eTeWZrwqFVYJyTYN6pifrNbSvGrP1u9Hnmiug5zY9697ExWQ/aid0z9W7jp7/Iy/A6EftxKf31OfrDttfAPoB6q7ssCvt0DR+/AXYmV121T38LttfgJ9M9NJXo3v4XZ4LcCP04s2VZM9/LsCN0Isn7yZ75vILEC3yP6K/dWQFmjMjKNvsvf65EFrif0R/Z8URNBOpRJnnAtyE/s6KI2gm0xP1P34BVGO2vgO6m6pkPcLnq2Zzvdc/F0KLqEa1tgt+txlnGM35vs9o3XrL3yIuIbWs7t0N2nHGDMpnKlFm+VukJRpU15q6G34vv+eMCmWusp/fPxdCSzSqdXNH/G5+15HVvEE9r0E9b8/0z4XQEo1q3dwR2rNiZdZDfdWgntn7/XMhtIjqoX5zR2jPSIXqUd7XIw3qmb3fPxdCi3iJSmYHdE+zQpTNzrAeaVDP7P3+uTm0+I7onuaILFs9I8KfrfZ+/9wYWnpndF9vRJbJehX8vNr7/XMzaFnzJ0B7V4wY9TP8+Wrv98/NoGWbPwW/r98/M4PyzQjKkj3bPx8uxb/gjGquYdkz0rxxeLqGZnz4S/WdXPHu7Aw7JzrT53z/kNTQrA///iEZM9l38c/yz7v0AjR/OzPvwmcpH9XP4J/jzzycrqGz/mZm3oPPjnyX6LypC2BQz/ubqbwHn3nHGaLZwykaUg3qeSMoS1ahWbUCzXlnGM35/lVWiGYO0xpSDep5FcpUjKBsZgRlR47Isr53tSOi/GFSQ6pBPa+H+jMqlBmpUGbGjCyrvSvNyPKHSQp6K5mmJ6p7fEb1UL+iQplZI6Kc1q82I8sfJik46xnoHNND/Yoe6p8xIspp/WozsuzhmwbPeAY6xzSopypa99lID/W9BOVWGDHKHr5R2Bz1m7PQGapBPbMKzZoRlDUJylWtQHNNgnJNz+Ebhc2sX4HmKhrUM6vQrBlBWTOCsiv0UL+pHCo0YJ6FzprRoJ5ZhWbNCMqaEZTdReVQoQHzDHTOjB7qm1Vo1iQo582g/KclDlUaMmehM8gs66G+l9Cez5Me6qsjaOaTEocqDZmz0BmmQpmmQpmKHuqfsQLNfcqIQ4cGzVnoDFOhTFOhzEiFMmesQrOrzTh0adichc4gsyxBuUyCcjPOQmesNOPQpWHzDHSOd5SJoGxkBGVHnoXOWuWIQ4IOMM9CZ5mVfgbNeKvQrPcK6Ny7rXDNr3soQX/SXVZ5LsBC6I+6wxmeC7AY+sOudJbnAnwA+uPe8R2eC/BB6M+c9V2eC/Bh6E8deR3f338A1eu3ZLIPFSQAAAAASUVORK5CYII=);
+  width: 128px;   height: 64px; }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+<a href="home_sp.htm"><img src="https://usuaris.tinet.cat/fmco/images/titul.gif"></a>
+Paco's Official Web Site
+</a>
+</div>
+
+    <div class="card">
+      <p>Bienvenido a la web de <b>Paco Ca&ntilde;ada</b>.<br>
+
+<br> Aquí encontrar&aacute;s montajes electr&oacute;nicos para una de mis aficiones: las maquetas de trenes</p>
+<a href="home_sp.html"><img src="https://fmcopaco.github.io/images/spanish.gif"></a>
+    </div>
+
+
+    <div class="card">
+      <p>Welcome to the <b>Paco Ca&ntilde;ada</b> website.<br>
+
+<br>Here you will find electronic gadgets for one of my hobbys: model railroad</p>
+<a href="home_en.htm"><img src="https://fmcopaco.github.io/fmco/images/english.gif"></a>
+    </div>
+
+    <div class="card">
+<a href="home_sp.html"><img class="paco"></a>
+    </div>
+
+<div class="footer">
+<form action="https://www.google.com/search" target="blank">
+<input type="hidden" value="fmcopaco.github.io" name="as_sitesearch">
+<input type="search" name="q" placeholder="Buscar en el sitio...">
+</form>
+
+<h3>P&aacute;gina creada por F.M.Ca&ntilde;ada, 2004-2025</h3>
+</div>
+
+
+
+</body>
+</html>
+
