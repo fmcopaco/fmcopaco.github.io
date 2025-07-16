@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 10px 0px;
+  text-align: left;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 35px;
+  background: #002080;
+  color: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: blue;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 10px 10px;
+  margin-top: 10px;
+text-align: justify;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+
+
+/* Footer */
+.mainp::after {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+.button{display:block; width:120px; background-color:#f48100; border:none; color:white; padding: 13px 10px; text-decoration:none; font-size:15px; margin: 0px auto 15px; cursor:pointer; border-radius:4px; font-weight: bold;}
+.button-on{background-color:#f48100;}
+.button-on:active{background-color:#f48100;}
+.button-off{background-color:#26282d;}
+.button-off:active{background-color:#26282d;}
+
+p.round {
+  border: 2px solid white;
+  border-radius: 12px;
+  background: white;
+  color:blue;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+a.tag:link {
+  text-decoration: none;
+  color:blue;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+a.tag:visited {
+  text-decoration: none;
+  color:blue;
+}
+
+a.tag:hover {
+  text-decoration: none;
+  color:lightblue;
+}
+
+b.paco {
+  font-family: arial;
+}
+
+img.paco {    
+  content: url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABACAYAAADS1n9/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAATaSURBVHhe7ZKBjuMwCAX3/396T7ZEj7wbME4T13ubkaZS4eHQ1F/fD1vy9fU19AqeC7AZ9EdnvstzATaB/twZz/KapEPJu1j1nN3Q3/2OZ5i+AM07WPGM3dDffIWzhBfAoz3tP8xB7zPTQ33vLKUL0Ij6Wvc9D+WaRlQ3tO/1UF/9JLTPyBFnZoxXcnQA9bXm9VDfNKJ6Q3ukQT3yE9AeI6ucnX2lRsPaVyljRHVPlNG69ajW0Lr1qLYa3YF8BzqvmfHqjoa0r1LGk/UaUf/u+ir0+eqVzJz/6mQD2quqZJlP1Vegz1bvoPqMVycboB7VKkRzM3WtWb0xW1+BPtu8k+rzXlUaID3UNw3qeY1qPdKYra9An23eTeWZrwqFVYJyTYN6pifrNbSvGrP1u9Hnmiug5zY9697ExWQ/aid0z9W7jp7/Iy/A6EftxKf31OfrDttfAPoB6q7ssCvt0DR+/AXYmV121T38LttfgJ9M9NJXo3v4XZ4LcCP04s2VZM9/LsCN0Isn7yZ75vILEC3yP6K/dWQFmjMjKNvsvf65EFrif0R/Z8URNBOpRJnnAtyE/s6KI2gm0xP1P34BVGO2vgO6m6pkPcLnq2Zzvdc/F0KLqEa1tgt+txlnGM35vs9o3XrL3yIuIbWs7t0N2nHGDMpnKlFm+VukJRpU15q6G34vv+eMCmWusp/fPxdCSzSqdXNH/G5+15HVvEE9r0E9b8/0z4XQEo1q3dwR2rNiZdZDfdWgntn7/XMhtIjqoX5zR2jPSIXqUd7XIw3qmb3fPxdCi3iJSmYHdE+zQpTNzrAeaVDP7P3+uTm0+I7onuaILFs9I8KfrfZ+/9wYWnpndF9vRJbJehX8vNr7/XMzaFnzJ0B7V4wY9TP8+Wrv98/NoGWbPwW/r98/M4PyzQjKkj3bPx8uxb/gjGquYdkz0rxxeLqGZnz4S/WdXPHu7Aw7JzrT53z/kNTQrA///iEZM9l38c/yz7v0AjR/OzPvwmcpH9XP4J/jzzycrqGz/mZm3oPPjnyX6LypC2BQz/ubqbwHn3nHGaLZwykaUg3qeSMoS1ahWbUCzXlnGM35/lVWiGYO0xpSDep5FcpUjKBsZgRlR47Isr53tSOi/GFSQ6pBPa+H+jMqlBmpUGbGjCyrvSvNyPKHSQp6K5mmJ6p7fEb1UL+iQplZI6Kc1q82I8sfJik46xnoHNND/Yoe6p8xIspp/WozsuzhmwbPeAY6xzSopypa99lID/W9BOVWGDHKHr5R2Bz1m7PQGapBPbMKzZoRlDUJylWtQHNNgnJNz+Ebhc2sX4HmKhrUM6vQrBlBWTOCsiv0UL+pHCo0YJ6FzprRoJ5ZhWbNCMqaEZTdReVQoQHzDHTOjB7qm1Vo1iQo582g/KclDlUaMmehM8gs66G+l9Cez5Me6qsjaOaTEocqDZmz0BmmQpmmQpmKHuqfsQLNfcqIQ4cGzVnoDFOhTFOhzEiFMmesQrOrzTh0adichc4gsyxBuUyCcjPOQmesNOPQpWHzDHSOd5SJoGxkBGVHnoXOWuWIQ4IOMM9CZ5mVfgbNeKvQrPcK6Ny7rXDNr3soQX/SXVZ5LsBC6I+6wxmeC7AY+sOudJbnAnwA+uPe8R2eC/BB6M+c9V2eC/Bh6E8deR3f338A1eu3ZLIPFSQAAAAASUVORK5CYII=);
+  width: 128px;   height: 64px; }
+
+
+img.youtube {    
+  content: url(
+data:image/png;base64,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);
+  width: 32px;   height: 32px; }
+
+
+</style>
+</head>
+<body>
+
+
+
+<div class="row">
+  <div class="leftcolumn">
+
+    <div class="card">
+      <h2>GitHub</h2>
+      <h5>GitHub repositorios, Jul 15, 2025</h5>
+      <div><a href="https://github.com/fmcopaco"><img src="images/github.png"></a></div>
+      <p>He subido a <a href="https://github.com/fmcopaco">GitHub</a> algunos de mis dise&ntilde;os (PacoMouse, LocoSpeed, PacoWagon, PacoWagonDisplay, FastClockLN y el libro Lenguage de Programaci&oacute;n Arduino con sus ejemplos.</p>
+<a class = "button button-on" href="https://github.com/fmcopaco">Read more ...</a>
+    </div>
+
+    <div class="card">
+      <h2>PacoMouse</h2>
+      <h5>Mando adicional personalizable, Abr 10, 2025</h5>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/3rrbmPnA1nU?si=DWh9Tt-boKuzfKxD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <p>Nueva version de <b class="paco">PacoMouse</b>, un sencillo mando adicional para el control de nuestra maqueta. Se puede montar en diferentes versiones con conexión Loconet o Xpressnet, o bien conexión WiFi con protocolo Z21, ECoS, Loconet over TCP o Xpressnet LAN.
+<p>Ahora con soporte ECoS, Loconet over TCP, Xpressnet LAN y teclado táctil. Automatización... </p>
+<a class = "button button-on" href="https://usuaris.tinet.cat/fmco/pacomouse_sp.html">Leer mas ...</a>
+    </div>
+
+
+
+
+  </div>
+
+
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>Acerca...</h2>
+      <p>Bienvenido a la web de <b>Paco Ca&ntilde;ada</b>.<br>
+
+<br> Aquí encontrar&aacute;s montajes electr&oacute;nicos para una de mis aficiones: las maquetas de trenes</p>
+<img class="paco">
+    </div>
+
+
+    <div class="card">
+      <h3>Recomendado</h3>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/dcc_sp.html" TARGET="main">Introducci&oacute;n a DCC</a><br> 
+<a class="tag" href="https://usuaris.tinet.cat/fmco/arduino_sp.html#libro" TARGET="main">Libro Programaci&oacute;n Arduino</a> <br>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/pacomouse_sp.html" TARGET="main">PacoMouse</a> <br>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/nanox_sp.html" TARGET="main">NanoX: Central DCC</a> <br>
+<a class="tag" href="lhttps://usuaris.tinet.cat/fmco/okmaus_sp.html#genli" TARGET="main">GenLI: Interface Xpressnet</a> <br>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/esp8266_sp.html#pacowagon" TARGET="main">PacoWagon</a> <br>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/dccacc_sp.html#servopoint" TARGET="main">ServoPoint</a> <br>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/dccacc_sp.html#unisemaf25" TARGET="main">UniSemaf</a> <br>
+<a class="tag" href="https://usuaris.tinet.cat/fmco/PpP_sp.html" TARGET="main">PpP: M&oacute;dulos DCC</a> <br>
+<p><b>YouTube   </b><a href="https://www.youtube.com/@fmcopaco/videos" target="blank"><img class="youtube"></a></p>
+<p><b>GitHub   </b><a href="https://github.com/fmcopaco" target="blank"><img src="images/github-mark.png"></a></p>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
